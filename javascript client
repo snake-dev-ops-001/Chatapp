@@ -1,0 +1,8 @@
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client
+const supabaseUrl = 'https://your-project.supabase.co'; // Replace with your Project URL
+const supabaseKey = 'your-public-api-key'; // Replace with your API Key
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+export default supabase;

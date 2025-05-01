@@ -1,0 +1,13 @@
+async function addMessage(messageText) {
+    const { data, error } = await supabase
+        .from('messages') // Specify your table name
+        .insert([{ text: messageText }]); // Insert data
+
+    if (error) {
+        console.error('Error inserting message:', error);
+    } else {
+        console.log('Message added:', data);
+    }
+}
+
+addMessage('Hello, Supabase!');

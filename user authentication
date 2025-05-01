@@ -1,0 +1,25 @@
+async function signUp(email, password) {
+    const { user, error } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+    });
+
+    if (error) {
+        console.error('Error signing up:', error);
+    } else {
+        console.log('User signed up:', user);
+    }
+}
+
+async function signIn(email, password) {
+    const { user, error } = await supabase.auth.signIn({
+        email: email,
+        password: password,
+    });
+
+    if (error) {
+        console.error('Error signing in:', error);
+    } else {
+        console.log('User signed in:', user);
+    }
+}

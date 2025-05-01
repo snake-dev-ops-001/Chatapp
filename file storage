@@ -1,0 +1,11 @@
+async function uploadFile(file) {
+    const { data, error } = await supabase.storage
+        .from('uploads') // Specify your storage bucket
+        .upload(`public/${file.name}`, file);
+
+    if (error) {
+        console.error('Error uploading file:', error);
+    } else {
+        console.log('File uploaded:', data);
+    }
+}

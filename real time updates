@@ -1,0 +1,6 @@
+supabase
+    .from('messages')
+    .on('INSERT', (payload) => {
+        console.log('New message:', payload.new);
+    })
+    .subscribe();
